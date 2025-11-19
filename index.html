@@ -3,530 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adil Ait | Innovación en Sistemas & Automatización</title>
+    <title data-key="title">Adil Ait | Analista de Infraestructuras Senior</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Roboto:wght@300;400;500&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Colores Inspirados en un Moderno Diseño Tech */
-            --primary-bg: #F8FAFC;      /* Fondo muy claro */
-            --secondary-bg: #FFFFFF;    /* Para tarjetas y módulos */
-            --text-dark: #1E293B;       /* Texto principal (casi negro) */
-            --text-light: #64748B;      /* Texto secundario/descripciones */
-            
-            /* Acentos vibrantes pero sofisticados */
-            --accent-main: #3B82F6;     /* Azul brillante */
-            --accent-dark: #1D4ED8;     /* Azul oscuro para contrastes */
-            --accent-green: #10B981;    /* Verde para elementos activos */
-            
-            --border-color: #E2E8F0;    /* Borde suave */
-            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.08), 0 20px 30px rgba(0, 0, 0, 0.12);
+            /* Paleta de Colores de Consultoría Premium */
+            --color-primary-dark: #1A1A1A; /* Negro Corporativo */
+            --color-secondary-blue: #007BFF; /* Azul de Confianza */
+            --color-accent-code: #2ECC71; /* Verde de Consola/Éxito */
+            --color-bg-light: #F9F9F9;    /* Fondo Limpio */
+            --color-text-dark: #333333;
+            --color-text-light: #6A6A6A;
+            --color-cta-secondary: #5C6773; /* Gris para LinkedIn */
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--primary-bg);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif; /* Más moderno y neutral */
+            background-color: var(--color-bg-light);
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- TIPOGRAFÍA --- */
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif; /* Títulos con impacto */
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .mono { font-family: 'Fira Code', monospace; }
-
-        /* --- LAYOUT --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-spacing { padding: 5rem 0; }
-
-        /* --- BOTONES --- */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 9999px; /* Totalmente redondeado */
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            background: var(--accent-main);
-            color: var(--white);
-            border: 2px solid var(--accent-main);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            border-color: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--accent-main);
-            border: 2px solid var(--accent-main);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent-main);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* --- HEADER --- */
-        header {
-            background-color: var(--secondary-bg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .header-content {
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
+            flex-direction: column;
+            color: var(--color-text-dark);
         }
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.7rem;
-            color: var(--text-dark);
-        }
-        .logo span { color: var(--accent-main); }
-        
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: 2.5rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: var(--accent-main); }
-        nav a::after { /* Animación de subrayado */
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background-color: var(--accent-main);
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after { width: 100%; }
 
-        /* --- HERO SECTION --- */
-        .hero-section {
-            background: var(--primary-bg);
-            padding: 8rem 0;
-            position: relative;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        /* --- UTILS --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .code { font-family: 'Fira Code', monospace; color: var(--color-accent-code); font-weight: 500; font-size: 0.95rem; }
+
+        /* --- HEADER Y NAVEGACIÓN --- */
+        header { background-color: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--color-primary-dark); }
+        .logo span { color: var(--color-secondary-blue); }
+        
+        /* Selector de Idioma */
+        .lang-switcher button {
+            background: none; border: none; font-weight: 500; cursor: pointer; padding: 5px 8px; border-radius: 4px;
+            color: var(--color-text-light); transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switcher button.active { background-color: var(--color-secondary-blue); color: white; }
+
+        /* --- HERO & CONTENIDO PRINCIPAL --- */
+        .main-content {
+            flex-grow: 1;
+            padding: 5rem 0 3rem;
         }
 
         .hero-text h1 {
-            font-size: 4.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-        .hero-text h1 .highlight { color: var(--accent-main); }
-        .hero-text p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-        .hero-cta { display: flex; gap: 1.5rem; }
-
-        .hero-image-wrap {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-image-wrap::before { /* Forma de fondo abstracto */
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-main) 0%, var(--accent-green) 100%);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Forma orgánica */
-            opacity: 0.15;
-            transform: rotate(-15deg) scale(1.1);
-        }
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow-hover);
-            position: relative;
-            z-index: 1; /* Para que esté sobre la forma abstracta */
-        }
-        /* --- ACERCA DE --- */
-        .about-section {
-            padding: 6rem 0;
-            background-color: var(--secondary-bg);
-            border-top: 1px solid var(--border-color);
-        }
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 3fr; /* Menos espacio a la izquierda para el título */
-            gap: 4rem;
-            align-items: center;
-        }
-        .about-text h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        .about-text h2::after { /* Subrayado moderno */
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 70%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent-main), var(--accent-green));
-            border-radius: 3px;
-        }
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .stat-item {
-            background-color: var(--primary-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--accent-main);
-        }
-        .stat-item .num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-dark);
-            line-height: 1;
-        }
-        .stat-item .label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 0.5rem;
-        }
-        /* --- SKILLS GRID --- */
-        .skills-section {
-            padding: 6rem 0;
-            text-align: center;
-        }
-        .skills-section h2 { margin-bottom: 4rem; font-size: 3rem; }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .skill-card {
-            background-color: var(--secondary-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-light);
-            border-bottom: 5px solid transparent;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-        }
-        .skill-card:hover {
-            transform: translateY(-8px);
-            border-bottom-color: var(--accent-main);
-            box-shadow: var(--shadow-hover);
-        }
-        .skill-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent-dark);
-        }
-        .skill-card ul { list-style: none; margin-top: 1.5rem; }
-        .skill-card li {
             margin-bottom: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
+            color: var(--color-primary-dark);
+            font-weight: 800;
         }
-        .skill-card li::before {
-            content: '→'; /* Flecha moderna */
-            color: var(--accent-main);
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--color-text-light);
+        }
+        .tag-container { margin-bottom: 3rem; }
+        .tag {
+            display: inline-block;
+            background-color: var(--color-primary-dark);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
             margin-right: 10px;
-            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- TESTIMONIALS --- */
-        .testimonials-section {
-            background: linear-gradient(145deg, var(--accent-main), var(--accent-dark));
-            padding: 6rem 0;
-            color: white;
-            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%); /* Forma dinámica */
-            margin-top: -3rem;
-            margin-bottom: -3rem;
-            text-align: center;
+        /* Contenedor de Botones */
+        .cta-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        .testimonials-section h2 { color: var(--white); margin-bottom: 3rem; font-size: 3rem; }
-        .testimonial-grid {
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* Estilo para el botón principal (Blog) */
+        .cta-primary {
+            background-color: var(--color-secondary-blue);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        .cta-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Estilo para el botón secundario (LinkedIn) */
+        .cta-secondary {
+            background-color: var(--color-cta-secondary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(92, 103, 115, 0.3);
+        }
+        .cta-secondary:hover {
+            background-color: #4A535F;
+            transform: translateY(-2px);
+        }
+
+        /* --- TARJETAS DE SERVICIO --- */
+        .card-grid {
+            margin-top: 5rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        .testimonial-card {
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+        .info-card {
+            background: white;
             padding: 2rem;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
+            border-radius: 8px;
+            border-top: 4px solid var(--color-primary-dark); 
+            box-shadow: var(--shadow-md);
+            transition: box-shadow 0.3s;
         }
-        .testimonial-card::before {
-            content: "“";
-            font-family: serif; /* Usamos serif para la comilla grande */
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.3);
-            position: absolute;
-            top: -15px;
-            left: 10px;
-            line-height: 1;
-            z-index: 0;
+        .info-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-        .testimonial-card p {
-            font-style: italic;
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-            position: relative; /* Para que el texto esté sobre la comilla */
-            z-index: 1;
-        }
-        .testimonial-card cite {
+        .info-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--color-secondary-blue); 
+            margin-bottom: 0.8rem;
+            padding-bottom: 5px;
             font-weight: 600;
-            display: block;
-            margin-top: 1rem;
         }
-        .testimonial-card span {
-            font-size: 0.85rem;
-            opacity: 0.8;
+        .info-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
         }
-
-        /* --- CONTACT --- */
-        .contact-section {
-            padding: 6rem 0;
-            text-align: center;
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
         }
-        .contact-section h2 { font-size: 3rem; margin-bottom: 1.5rem; }
-        .contact-section p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto 3rem;
+        .info-card li {
+            font-size: 0.9rem;
+            padding: 8px 0;
+            color: var(--color-text-dark);
+            border-bottom: 1px dashed #E0E0E0;
+            display: flex;
+            align-items: center;
         }
-        .social-link {
-            font-size: 1.1rem;
-            color: var(--accent-main);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+        .info-card li:last-child { border-bottom: none; }
+        .info-card li::before {
+            content: '»'; 
+            color: var(--color-primary-dark);
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
         }
-        .social-link:hover { color: var(--accent-dark); }
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--text-dark); /* Fondo oscuro para el footer */
-            color: var(--white);
+            background-color: var(--color-primary-dark);
+            color: rgba(255, 255, 255, 0.5);
             text-align: center;
-            padding: 3rem 0;
+            padding: 1.5rem 0;
             font-size: 0.9rem;
+            margin-top: auto;
         }
-        footer p { opacity: 0.8; }
-
-        /* --- RESPONSIVE --- */
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-section { grid-template-columns: 1fr; text-align: center; }
-            .hero-image-wrap { margin-top: 3rem; }
-            .hero-text h1 { font-size: 3rem; }
-            .hero-text p { font-size: 1rem; }
-            .hero-cta { justify-content: center; flex-wrap: wrap; }
-            
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text h2 { font-size: 1.2rem; }
+            .main-content { padding: 3rem 0; }
             .header-content { flex-direction: column; gap: 1rem; }
-            nav { margin-top: 1rem; }
-            nav a { margin: 0 0.8rem; }
-
-            .about-content { grid-template-columns: 1fr; }
-            .about-text h2 { font-size: 2.5rem; text-align: center; width: 100%; }
-            .about-text h2::after { left: 50%; transform: translateX(-50%); }
-            .stats-grid { grid-template-columns: 1fr; }
-
-            .testimonials-section { clip-path: none; margin-top: 0; margin-bottom: 0; padding: 4rem 0; }
+            .lang-switcher { margin-left: 0; }
+            .card-grid { margin-top: 3rem; }
+            .cta-container { flex-direction: column; align-items: flex-start; }
+            .cta-button { width: 100%; text-align: center; padding: 0.8rem 1.5rem; }
         }
     </style>
 </head>
-<body>
+<body id="body">
+
+    <script>
+        const translations = {
+            'es': {
+                'title': 'Adil Ait | Analista de Infraestructuras Sénior',
+                'logo': 'ADIL',
+                'hero-name': 'Adil Ait',
+                'hero-slogan': 'Analista de Infraestructuras Sénior | Especialista en Sistemas Linux.',
+                'hero-subtext': 'Liderazgo Técnico, 15+ años de experiencia y Optimización de Plataformas de Misión Crítica mediante Automatización Inteligente.',
+                'tag-1': 'INFRAESTRUCTURA SÉNIOR',
+                'tag-2': 'AUTOMATIZACIÓN',
+                'tag-3': 'DEVOPS',
+                'tag-4': 'LINUX SYSTEMS',
+                'cta-blog-text': 'Explorar Blog Técnico',
+                'cta-blog-link': 'https://theunixguide.blogspot.com/',
+                'cta-linkedin-text': 'Ver Perfil LinkedIn',
+                'cta-linkedin-link': 'https://www.linkedin.com/in/aithmine',
+                
+                // --- TARJETAS ELEGANTES Y DINÁMICAS ---
+                
+                'card-title-vision': '1. Visión Estratégica y Liderazgo',
+                'card-vision-text': 'Transformo los retos operativos en soluciones escalables. Diseño estrategias de alta disponibilidad (DR/Uptime) que garantizan la continuidad del negocio.',
+                'card-vision-list': [
+                    'Definición de Arquitecturas Linux (RHEL/CentOS)',
+                    'Consultoría en Continuidad y Recuperación de Desastres',
+                    'Gestión de Sistemas Críticos (Solaris/AIX/HP-UX a Linux)'
+                ],
+                
+                'card-title-ejecucion': '2. Ejecución, Escala y Automatización',
+                'card-ejecucion-text': 'Experto en la estandarización y gestión masiva de infraestructuras mediante código. Mi enfoque es el despliegue rápido y sin errores.',
+                'card-ejecucion-list': [
+                    'Ingeniería de Automatización con <span class="code">Ansible</span>',
+                    'Aceleración de procesos operativos (Python/Bash)',
+                    'Integración de Monitoreo (Prometheus/Grafana)'
+                ],
+                
+                'card-title-valor': '3. Valor Añadido y Desarrollo',
+                'card-valor-text': 'Mi compromiso se extiende a la mentoría técnica y la transferencia de conocimiento, contribuyendo al crecimiento del equipo y de la comunidad.',
+                'card-valor-list': [
+                    'Blog Técnico: theunixguide.blogspot.com',
+                    'Mentoría y Formación de Equipos Técnicos',
+                    'Optimización de Rendimiento de Sistemas'
+                ],
+                'footer-copy': '© 2025 Adil Ait | Senior Infrastructure Analyst | Barcelona.'
+            },
+            'en': {
+                'title': 'Adil Ait | Senior Infrastructure Analyst',
+                'logo': 'ADIL',
+                'hero-name': 'Adil Ait',
+                'hero-slogan': 'Senior Infrastructure Analyst | Linux Systems Specialist.',
+                'hero-subtext': 'Technical Leadership, 15+ years of experience, and Optimization of Mission-Critical Platforms through Intelligent Automation.',
+                'tag-1': 'SENIOR INFRASTRUCTURE',
+                'tag-2': 'AUTOMATION',
+                'tag-3': 'DEVOPS',
+                'tag-4': 'LINUX SYSTEMS',
+                'cta-blog-text': 'Explore Technical Blog',
+                'cta-blog-link': 'https://theunixguide.blogspot.com/',
+                'cta-linkedin-text': 'View LinkedIn Profile',
+                'cta-linkedin-link': 'https://www.linkedin.com/in/aithmine',
+                
+                // --- TARJETAS ELEGANTES Y DINÁMICAS ---
+                
+                'card-title-vision': '1. Strategic Vision and Leadership',
+                'card-vision-text': 'I transform operational challenges into scalable solutions. I design high-availability strategies (DR/Uptime) that guarantee business continuity.',
+                'card-vision-list': [
+                    'Definition of Linux Architectures (RHEL/CentOS)',
+                    'Consulting on Continuity and Disaster Recovery',
+                    'Critical Systems Management (Solaris/AIX/HP-UX to Linux)'
+                ],
+                
+                'card-title-ejecucion': '2. Execution, Scale, and Automation',
+                'card-ejecucion-text': 'Expert in standardizing and mass managing infrastructures through code. My focus is on fast and error-free deployment.',
+                'card-ejecucion-list': [
+                    'Automation Engineering with <span class="code">Ansible</span>',
+                    'Acceleration of operational processes (Python/Bash)',
+                    'Monitoring Integration (Prometheus/Grafana)'
+                ],
+                
+                'card-title-valor': '3. Added Value and Development',
+                'card-valor-text': 'My commitment extends to technical mentoring and knowledge transfer, contributing to the growth of the team and the community.',
+                'card-valor-list': [
+                    'Technical Blog: theunixguide.blogspot.com',
+                    'Mentoring and Training of Technical Teams',
+                    'System Performance Optimization'
+                ],
+                'footer-copy': '© 2025 Adil Ait | Senior Infrastructure Analyst | Barcelona.'
+            }
+        };
+
+        let currentLang = 'es';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            // Eliminar la clase rtl si existiera
+            document.getElementById('body').className = ''; 
+            
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (t[key]) {
+                    element.innerHTML = t[key]; 
+                }
+            });
+
+            // Enlaces de acción principal y secundario
+            document.getElementById('cta-blog').href = t['cta-blog-link'];
+            document.getElementById('cta-linkedin').href = t['cta-linkedin-link'];
+            
+            // Listas de las tarjetas
+            document.querySelectorAll('.card-list').forEach(ul => {
+                const key = ul.getAttribute('data-list-key');
+                ul.innerHTML = ''; 
+                if (t[key]) {
+                    t[key].forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = item; 
+                        ul.appendChild(li);
+                    });
+                }
+            });
+
+            // Botones de idioma
+            document.querySelectorAll('.lang-switcher button').forEach(button => {
+                button.classList.remove('active');
+                if (button.textContent.toLowerCase() === lang) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.card-list').forEach(ul => {
+                ul.innerHTML = ''; 
+            });
+            changeLanguage('es');
+            
+            document.querySelectorAll('.lang-switcher button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    changeLanguage(e.target.textContent.toLowerCase());
+                });
+            });
+        });
+    </script>
+
 
     <header>
         <div class="container header-content">
-            <div class="logo">ADIL<span>AIT</span></div>
-            <nav>
-                <a href="#about">Acerca de</a>
-                <a href="#skills">Habilidades</a>
-                <a href="https://theunixguide.blogspot.com/" target="_blank">Blog</a>
-                <a href="#contact" class="btn btn-primary">Contacto</a>
-            </nav>
+            <div class="logo">
+                <span data-key="logo">ADIL</span><span>AIT</span>
+            </div>
+            <div class="lang-switcher">
+                <button>ES</button>
+                <button>EN</button>
+            </div>
         </div>
     </header>
 
-    <section class="hero-section">
+    <main class="main-content">
         <div class="container">
             <div class="hero-text">
-                <h1>
-                    Sistemas <span class="highlight">Inteligentes.</span><br>
-                    Infraestructura <span class="highlight">Robusta.</span>
-                </h1>
-                <p>
-                    Analista Senior de Infraestructura con pasión por la automatización de sistemas Unix/Linux y la optimización de entornos complejos.
-                </p>
-                <div class="hero-cta">
-                    <a href="https://www.linkedin.com/in/aithmine" target="_blank" class="btn btn-primary">LinkedIn</a>
-                    <a href="https://theunixguide.blogspot.com/" target="_blank" class="btn btn-outline">Mi Blog</a>
+                <p style="font-size: 1.1rem; color: var(--color-secondary-blue); font-weight: 600; margin-bottom: 0.5rem;" data-key="hero-name">Adil Ait</p>
+                <h1 data-key="hero-slogan">Analista de Infraestructuras Sénior | Especialista en Sistemas Linux.</h1>
+                <h2 data-key="hero-subtext">Liderazgo Técnico, 15+ años de experiencia y Optimización de Plataformas de Misión Crítica mediante Automatización Inteligente.</h2>
+                
+                <div class="tag-container">
+                    <span class="tag" data-key="tag-1">INFRAESTRUCTURA SÉNIOR</span>
+                    <span class="tag" data-key="tag-2">AUTOMATIZACIÓN</span>
+                    <span class="tag" data-key="tag-3">DEVOPS</span>
+                    <span class="tag" data-key="tag-4">LINUX SYSTEMS</span>
                 </div>
-            </div>
-            <div class="hero-image-wrap">
-                <img src="https://via.placeholder.com/500x350/3B82F6/FFFFFF?text=IT+Expert" alt="Adil Ait - Infrastructure Expert" class="hero-image">
-            </div>
-        </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="container about-content">
-            <div class="about-text">
-                <h2>¿Quién es Adil Ait?</h2>
-                <p>
-                    Con más de <strong>12 años</strong> de trayectoria en infraestructura IT, he cultivado una habilidad excepcional para diagnosticar y resolver los desafíos más intrincados en entornos de sistemas. Mi expertise abarca desde la administración profunda de plataformas Unix/Linux hasta la implementación de soluciones de automatización avanzadas con Ansible.
-                </p>
-                <p>
-                    Mi filosofía es simple: una infraestructura robusta es la base de la innovación. Me esfuerzo por optimizar cada proceso, garantizando no solo la eficiencia operativa, sino también la escalabilidad y seguridad a largo plazo.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="num">12+</div>
-                        <div class="label">Años de Exp.</div>
+                <div class="cta-container">
+                    <a id="cta-blog" href="#" target="_blank" class="cta-button cta-primary" data-key="cta-blog-text">Explorar Blog Técnico</a>
+                    
+                    <a id="cta-linkedin" href="#" target="_blank" class="cta-button cta-secondary" data-key="cta-linkedin-text">Ver Perfil LinkedIn</a>
+                </div>
+                
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h3 data-key="card-title-vision">1. Visión Estratégica y Liderazgo</h3>
+                        <p data-key="card-vision-text">Transformo los retos operativos en soluciones escalables. Diseño estrategias de alta disponibilidad (DR/Uptime) que garantizan la continuidad del negocio.</p>
+                        <ul class="card-list" data-list-key="card-vision-list">
+                            </ul>
                     </div>
-                    <div class="stat-item">
-                        <div class="num">500+</div>
-                        <div class="label">Conexiones</div>
+                    
+                    <div class="info-card">
+                        <h3 data-key="card-title-ejecucion">2. Ejecución, Escala y Automatización</h3>
+                        <p data-key="card-ejecucion-text">Experto en la estandarización y gestión masiva de infraestructuras mediante código. Mi enfoque es el despliegue rápido y sin errores.</p>
+                        <ul class="card-list" data-list-key="card-ejecucion-list">
+                            </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-key="card-title-valor">3. Valor Añadido y Desarrollo</h3>
+                        <p data-key="card-valor-text">Mi compromiso se extiende a la mentoría técnica y la transferencia de conocimiento, contribuyendo al crecimiento del equipo y de la comunidad.</p>
+                        <ul class="card-list" data-list-key="card-valor-list">
+                            </ul>
                     </div>
                 </div>
             </div>
-            <div class="about-image-wrap">
-                <img src="https://via.placeholder.com/500x400/10B981/FFFFFF?text=Automation+Flow" alt="Diagrama de automatización" class="hero-image" style="border-radius: 20px;">
-            </div>
         </div>
-    </section>
-
-    <section id="skills" class="skills-section section-spacing">
-        <div class="container">
-            <h2>Mi Set de Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Plataformas Unix</h3>
-                    <ul>
-                        <li>Administración RHEL / CentOS</li>
-                        <li>Experto en Solaris & AIX</li>
-                        <li>Gestión de HP-UX & Service Guard</li>
-                        <li>Optimización de Kernel</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Automatización & DevOps</h3>
-                    <ul>
-                        <li>Desarrollo de Ansible Playbooks</li>
-                        <li>Configuración de Ansible Tower</li>
-                        <li>Infraestructura como Código</li>
-                        <li>Scripting Avanzado (Shell, Python)</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Gestión & Monitoreo</h3>
-                    <ul>
-                        <li>Monitorización con Grafana & Prometheus</li>
-                        <li>Resolución de Incidentes críticos</li>
-                        <li>Soporte Oracle RAC / ASM</li>
-                        <li>Gestión de SAN & NAS Storage</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-section">
-        <div class="container">
-            <h2>Lo que dicen de mí</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>Gran profesional. Con aptitud y actitud. Colaboramos siempre de forma satisfactoria. Fue agradable compartir experiencias profesionales.</p>
-                    <cite>Victor Masmitjà Prieto</cite>
-                    <span>I+D - Video - IT</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>Trabajar con Adil siempre es grato. Es un gran compañero de equipo. Tiene gran calidad como Administrador de Sistemas, motivado por aprender y afrontar nuevos desafíos tecnológicos. Muy paciente y metódico.</p>
-                    <cite>Jorge Medina</cite>
-                    <span>Engineering Manager</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section section-spacing">
-        <div class="container">
-            <h2>Conectemos.</h2>
-            <p>
-                Si buscas un especialista con visión estratégica, experiencia comprobada y pasión por la tecnología, me encantaría explorar cómo podemos colaborar.
-            </p>
-            <a href="https://www.linkedin.com/in/aithmine" target="_blank" class="social-link">Encuéntrame en LinkedIn</a>
-        </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Adil Ait. Todos los derechos reservados.</p>
+            <p data-key="footer-copy">© 2025 Adil Ait | Senior Infrastructure Analyst | Barcelona.</p>
         </div>
     </footer>
 
