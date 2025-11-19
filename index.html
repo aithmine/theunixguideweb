@@ -12,13 +12,13 @@
     <style>
         :root {
             /* Paleta de Colores de Consultoría Premium */
-            --color-primary-dark: #1A1A1A; /* Negro Corporativo */
-            --color-secondary-blue: #007BFF; /* Azul de Confianza */
-            --color-accent-code: #2ECC71; /* Verde de Consola/Éxito */
-            --color-bg-light: #F9F9F9;    /* Fondo Limpio */
+            --color-primary-dark: #1A1A1A; 
+            --color-secondary-blue: #007BFF; 
+            --color-accent-code: #2ECC71; 
+            --color-bg-light: #F9F9F9;    
             --color-text-dark: #333333;
             --color-text-light: #6A6A6A;
-            --color-cta-secondary: #5C6773; /* Gris para LinkedIn */
+            --color-cta-secondary: #5C6773; 
             --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -40,9 +40,25 @@
 
         /* --- HEADER Y NAVEGACIÓN --- */
         header { background-color: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--color-primary-dark); }
-        .logo span { color: var(--color-secondary-blue); }
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1.2rem 0; 
+        }
+        .logo { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.8rem; 
+            font-weight: 800; 
+            color: var(--color-primary-dark); 
+        }
+        /* Añadimos margen al texto del logo para separar ADIL de AIT */
+        .logo span:first-child { 
+            margin-right: 5px; /* Pequeño espacio entre ADIL y AIT */
+        }
+        .logo span:last-child { 
+            color: var(--color-secondary-blue); 
+        }
         
         /* Selector de Idioma */
         .lang-switcher button {
@@ -51,7 +67,7 @@
         }
         .lang-switcher button.active { background-color: var(--color-secondary-blue); color: white; }
 
-        /* --- HERO & CONTENIDO PRINCIPAL --- */
+        /* --- HERO & CONTENIDO PRINCIPAL (Otras secciones de estilo omitidas por brevedad, no han cambiado) --- */
         .main-content {
             flex-grow: 1;
             padding: 5rem 0 3rem;
@@ -124,7 +140,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- TARJETAS DE SERVICIO --- */
+        /* --- TARJETAS DE SERVICIO (Otras secciones de estilo omitidas por brevedad, no han cambiado) --- */
         .card-grid {
             margin-top: 5rem;
             display: grid;
@@ -206,7 +222,8 @@
         const translations = {
             'es': {
                 'title': 'Adil Ait | Analista de Infraestructuras Sénior',
-                'logo': 'ADIL',
+                'logo-name': 'ADIL', // Nuevo dato para la primera parte del nombre
+                'logo-surname': 'AIT', // Nuevo dato para la segunda parte del nombre
                 'hero-name': 'Adil Ait',
                 'hero-slogan': 'Analista de Infraestructuras Sénior | Especialista en Sistemas Linux.',
                 'hero-subtext': 'Liderazgo Técnico, 15+ años de experiencia y Optimización de Plataformas de Misión Crítica mediante Automatización Inteligente.',
@@ -218,8 +235,6 @@
                 'cta-blog-link': 'https://theunixguide.blogspot.com/',
                 'cta-linkedin-text': 'Ver Perfil LinkedIn',
                 'cta-linkedin-link': 'https://www.linkedin.com/in/aithmine',
-                
-                // --- TARJETAS ELEGANTES Y DINÁMICAS ---
                 
                 'card-title-vision': '1. Visión Estratégica y Liderazgo',
                 'card-vision-text': 'Transformo los retos operativos en soluciones escalables. Diseño estrategias de alta disponibilidad (DR/Uptime) que garantizan la continuidad del negocio.',
@@ -248,7 +263,8 @@
             },
             'en': {
                 'title': 'Adil Ait | Senior Infrastructure Analyst',
-                'logo': 'ADIL',
+                'logo-name': 'ADIL',
+                'logo-surname': 'AIT',
                 'hero-name': 'Adil Ait',
                 'hero-slogan': 'Senior Infrastructure Analyst | Linux Systems Specialist.',
                 'hero-subtext': 'Technical Leadership, 15+ years of experience, and Optimization of Mission-Critical Platforms through Intelligent Automation.',
@@ -260,8 +276,6 @@
                 'cta-blog-link': 'https://theunixguide.blogspot.com/',
                 'cta-linkedin-text': 'View LinkedIn Profile',
                 'cta-linkedin-link': 'https://www.linkedin.com/in/aithmine',
-                
-                // --- TARJETAS ELEGANTES Y DINÁMICAS ---
                 
                 'card-title-vision': '1. Strategic Vision and Leadership',
                 'card-vision-text': 'I transform operational challenges into scalable solutions. I design high-availability strategies (DR/Uptime) that guarantee business continuity.',
@@ -296,7 +310,6 @@
             currentLang = lang;
             const t = translations[lang];
             
-            // Eliminar la clase rtl si existiera
             document.getElementById('body').className = ''; 
             
             document.querySelectorAll('[data-key]').forEach(element => {
@@ -305,6 +318,10 @@
                     element.innerHTML = t[key]; 
                 }
             });
+
+            // Actualizar el logo directamente
+            document.getElementById('logo-name').textContent = t['logo-name'];
+            document.getElementById('logo-surname').textContent = t['logo-surname'];
 
             // Enlaces de acción principal y secundario
             document.getElementById('cta-blog').href = t['cta-blog-link'];
@@ -351,7 +368,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <span data-key="logo">ADIL</span><span>AIT</span>
+                <span id="logo-name" data-key="logo-name">ADIL</span><span id="logo-surname" data-key="logo-surname">AIT</span>
             </div>
             <div class="lang-switcher">
                 <button>ES</button>
@@ -376,7 +393,6 @@
 
                 <div class="cta-container">
                     <a id="cta-blog" href="#" target="_blank" class="cta-button cta-primary" data-key="cta-blog-text">Explorar Blog Técnico</a>
-                    
                     <a id="cta-linkedin" href="#" target="_blank" class="cta-button cta-secondary" data-key="cta-linkedin-text">Ver Perfil LinkedIn</a>
                 </div>
                 
@@ -384,22 +400,17 @@
                     <div class="info-card">
                         <h3 data-key="card-title-vision">1. Visión Estratégica y Liderazgo</h3>
                         <p data-key="card-vision-text">Transformo los retos operativos en soluciones escalables. Diseño estrategias de alta disponibilidad (DR/Uptime) que garantizan la continuidad del negocio.</p>
-                        <ul class="card-list" data-list-key="card-vision-list">
-                            </ul>
+                        <ul class="card-list" data-list-key="card-vision-list"></ul>
                     </div>
-                    
                     <div class="info-card">
                         <h3 data-key="card-title-ejecucion">2. Ejecución, Escala y Automatización</h3>
                         <p data-key="card-ejecucion-text">Experto en la estandarización y gestión masiva de infraestructuras mediante código. Mi enfoque es el despliegue rápido y sin errores.</p>
-                        <ul class="card-list" data-list-key="card-ejecucion-list">
-                            </ul>
+                        <ul class="card-list" data-list-key="card-ejecucion-list"></ul>
                     </div>
-
                     <div class="info-card">
                         <h3 data-key="card-title-valor">3. Valor Añadido y Desarrollo</h3>
                         <p data-key="card-valor-text">Mi compromiso se extiende a la mentoría técnica y la transferencia de conocimiento, contribuyendo al crecimiento del equipo y de la comunidad.</p>
-                        <ul class="card-list" data-list-key="card-valor-list">
-                            </ul>
+                        <ul class="card-list" data-list-key="card-valor-list"></ul>
                     </div>
                 </div>
             </div>
